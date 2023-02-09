@@ -7,6 +7,7 @@ use HivePress\Blocks;
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+add_action( 'redirect_helloWorld_page', 'check_admin_status' );
 
 /**
  * Controller class.
@@ -40,4 +41,24 @@ final class Followers extends Controller {
 	}
 	
 	// Implement the route actions here.
+
+	function check_admin_status() {
+		if ( ! is_user_logged_in() || ! current_user_can( 'administrator' ) ) {
+			// If the user is not logged in or not an administrator, redirect to the home page.
+			wp_safe_redirect( home_url() );
+			exit;
+		}
+		
+		$current_user = wp_get_current_user();
+		$registered = strtotime( $current_user->user_registered );
+		$one_hour_ago = strtotime( '-1 hour' );
+		
+		if ( $registered > $one_hour_ago ) {
+			// If the user is not registered for at least one hour, redirect to the home page.
+			wp_safe_redirect( home_url() );
+			exit;
+		}
+	}
+	
+
 }
