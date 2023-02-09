@@ -59,6 +59,17 @@ final class Followers extends Controller {
 			exit;
 		}
 	}
+
 	
+	public function add_menu_item( $menu ) {
+		if ( hivepress()->request->get_context( 'vendor_follow_ids' ) ) {
+			$menu['items']['listings_feed'] = [
+				'route'  => 'listings_feed_page',
+				'_order' => 20,
+			];
+		}
+
+		return $menu;
+	}
 
 }
