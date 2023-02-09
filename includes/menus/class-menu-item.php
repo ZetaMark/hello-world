@@ -13,8 +13,8 @@ class Foo_Bar extends Menu {
 				// Define the menu items.
 				'items' => [
 					'first_item'  => [
-						'label'  => 'First Item',
-						'route'  => 'listings_view_page',
+						'label'  => 'Hello World',
+						'route'  => 'Hello_World_Page',
 						'_order' => 123,
 					],
 
