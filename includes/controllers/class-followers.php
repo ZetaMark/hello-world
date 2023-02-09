@@ -7,7 +7,7 @@ use HivePress\Blocks;
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-add_action( 'redirect_helloWorld_page', 'check_admin_status' );
+add_action( 'redirect_Hello_World_Page', 'check_admin_status' );
 
 /**
  * Controller class.
@@ -24,12 +24,12 @@ final class Followers extends Controller {
 			[
 				'routes' => [
 					// Define custom URL routes here.
-					'hello_world_page' => [
+					'Hello_World_Page' => [
 						'title'     => esc_html__( 'HelloWorld', 'foo-helloWorld' ),
 						'base'      => 'user_account_page',
 						'path'      => '/hello-world”',
-						'redirect'  => [ $this, 'redirect_helloWorld_page' ],
-						'action'    => [ $this, 'render_helloWorld_page' ],
+						'redirect'  => [ $this, 'redirect_Hello_World_Page' ],
+						'action'    => [ $this, 'render_Hello_World_Page' ],
 						'paginated' => true,
 					],
 				],

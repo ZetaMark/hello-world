@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Template class.
  */
-class Listings_Feed_Page extends User_Account_Page {
+class Hello_World_Page extends User_Account_Page {
 
 	/**
 	 * Class constructor.
