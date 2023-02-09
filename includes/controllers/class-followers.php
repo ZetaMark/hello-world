@@ -23,6 +23,14 @@ final class Followers extends Controller {
 			[
 				'routes' => [
 					// Define custom URL routes here.
+					'hello_world_page' => [
+						'title'     => esc_html__( 'HelloWorld', 'foo-helloWorld' ),
+						'base'      => 'user_account_page',
+						'path'      => '/hello-world”',
+						'redirect'  => [ $this, 'redirect_helloWorld_page' ],
+						'action'    => [ $this, 'render_helloWorld_page' ],
+						'paginated' => true,
+					],
 				],
 			],
 			$args
